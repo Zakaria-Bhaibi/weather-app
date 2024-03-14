@@ -11,6 +11,10 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'meteo-widget',
+    loadChildren: () => import('./meteo-widget/meteo-widget.module').then( m => m.MeteoWidgetPageModule)
+  },
 ];
 
 @NgModule({
