@@ -15,6 +15,7 @@ export class MeteoWidgetPage  {
   weatherData: any;
   citys:string="";
   dataurl:string="";
+  isVisible: boolean = false;
   
 
 
@@ -43,8 +44,10 @@ export class MeteoWidgetPage  {
   }
   csearch(){
     this.getWeatherData();
+    this.isVisible = true;
     console.log(this.dataurl);
     console.log(this.citys);
+
   }
 
 

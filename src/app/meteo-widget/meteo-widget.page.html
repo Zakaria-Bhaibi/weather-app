@@ -7,19 +7,23 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-       <ion-title size="small">meteoWidget</ion-title>
+       <ion-title size="medium">Meteo Widget</ion-title>
     </ion-toolbar> 
   </ion-header> 
   <div>
-   <!-- <ion-back-button defaultHref="/home">Back!!!</ion-back-button>-->
+    <ion-back-button class="small-back-button" defaultHref="/home"></ion-back-button>
     <ion-card>
       <ion-card-header>
-        <ion-input class="searchin" type="text" [(ngModel)]="citys" placeholder="Type the city"/> <ion-button ng (click)="csearch()">Search</ion-button>
+        <ion-input class="searchin" type="text" [(ngModel)]="citys" placeholder="Type the city name"/> <ion-button ng (click)="csearch()">Search</ion-button>
+
         <ion-card-title>Weather</ion-card-title>
+        
         <ion-card-subtitle>{{pays}}</ion-card-subtitle>
+        
       </ion-card-header>
       <ion-card-content>
         <ion-list>
+          <img [hidden]="!isVisible" src="https://flagsapi.com/{{pays}}/flat/32.png">
           <ion-item>
             <ion-label>{{temp}}</ion-label>
           </ion-item>
