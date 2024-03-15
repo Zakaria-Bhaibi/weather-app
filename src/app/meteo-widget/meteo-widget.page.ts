@@ -13,14 +13,18 @@ export class MeteoWidgetPage  {
   pres: any;
   hum: any;
   weatherData: any;
+  citys:string="";
+  dataurl:string="";
+  
 
 
   constructor(private httpclient: HttpClient) {
-    this.getWeatherData();
-  }
 
+  }
+  
   getWeatherData(){
-    this.httpclient.get("https://api.openweathermap.org/data/2.5/weather?q=Morocco&appid=...&units=metric")
+    this.dataurl ="https://api.openweathermap.org/data/2.5/weather?q="+this.citys+"&appid=573c84f7cf38e9baf77a6636bd633e4d&units=metric" ;
+    this.httpclient.get(this.dataurl)
     .subscribe(
       (response) =>{
         this.weatherData= response;
@@ -36,6 +40,11 @@ export class MeteoWidgetPage  {
       }
     )
 
+  }
+  csearch(){
+    this.getWeatherData();
+    console.log(this.dataurl);
+    console.log(this.citys);
   }
 
 

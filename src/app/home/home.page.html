@@ -19,12 +19,12 @@
         <ion-card-title>Calculs</ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        <ion-input type="number" [(ngModel)]="op1"/>
-        <ion-input type="number" [(ngModel)]="op2"/>
-        <ion-button ng (click)="addition()"> + </ion-button><ion-button ng (click)="soustraction()"> - </ion-button><ion-button ng (click)="multiplication()"> * </ion-button><ion-button ng (click)="division()"> / </ion-button><br/>
+        <ion-input class="inp " type="number" [(ngModel)]="op1"/>
+        <ion-input class="inp" type="number" [(ngModel)]="op2"/>
+        <ion-button class="btn" ng (click)="addition()"> + </ion-button><ion-button class="btn" ng (click)="soustraction()"> - </ion-button><ion-button class="btn" ng (click)="multiplication()"> * </ion-button><ion-button class="btn" ng (click)="division()"> / </ion-button><br/>
+        <ion-button ng (click)="clear()">Clear</ion-button><br/>
         <ion-label>{{rslt}}</ion-label><br/>
-        <ion-button routerLink="/meteo-widget">Go to weather 1</ion-button><br/>
-        <ion-button (click)="goToMw()">Go to weather 2</ion-button><br/>
+        <ion-button (click)="goToMw()">Weather</ion-button><br/>
       </ion-card-content>
     </ion-card>
   </div>

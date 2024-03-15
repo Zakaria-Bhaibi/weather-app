@@ -8,9 +8,9 @@ import { Router } from '@angular/router';
 })
 export class HomePage {
 
-  op1: number=0;
-  op2: number=0;
-  rslt!:number;
+  op1!: any;
+  op2!: any;
+  rslt!:any;
 
   constructor(private router:Router) {}
 
@@ -26,7 +26,12 @@ export class HomePage {
   division(): void{
     this.rslt= this.op1 / this.op2;
   }
-
+  clear():void{
+    this.op1="";
+    this.op2="";
+    this.rslt = "";
+    
+  }
   goToMw(): void{
     this.router.navigate(['meteo-widget'])
   }
